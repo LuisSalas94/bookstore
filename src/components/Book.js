@@ -10,7 +10,9 @@ const Book = ({ info }) => {
         <h3 className="genre">{genre}</h3>
         <h1 className="title">{title}</h1>
         <h3 className="author">{author}</h3>
-        <button type="button" className="btn">Remove</button>
+        <button type="button" className="btn">
+          Remove
+        </button>
       </div>
       <div className="book-status">
         <h4 className="percentage">64%</h4>
