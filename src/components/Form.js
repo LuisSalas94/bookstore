@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { v4 } from 'uuid';
 import { addBook } from '../redux/books/books';
@@ -17,9 +18,14 @@ const Form = () => {
       id,
       genre: 'Action',
     };
-    dispatch(addBook(newBook));
-    setTitle('');
-    setAuthor('');
+    if (title && author) {
+      toast.success('Book was created successfully!');
+      dispatch(addBook(newBook));
+      setTitle('');
+      setAuthor('');
+    } else {
+      toast.warning('All inputs must be filled!');
+    }
   };
 
   return (

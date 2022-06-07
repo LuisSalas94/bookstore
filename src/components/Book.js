@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
 
@@ -8,6 +9,7 @@ const Book = ({
 }) => {
   const dispatch = useDispatch();
   const deleteBook = (id) => {
+    toast.success('Book was deleted successfully!');
     dispatch(removeBook(id));
   };
 
