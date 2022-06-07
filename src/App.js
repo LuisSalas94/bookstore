@@ -1,18 +1,18 @@
 import './App.css';
-// react router
 import { Routes, Route } from 'react-router-dom';
-// components
+import { Provider } from 'react-redux';
 import Books from './components/Books';
 import Categories from './components/Categories';
+import store from './redux/configureStore';
 
 function App() {
   return (
-    <div className="App">
+    <Provider store={store}>
       <Routes>
         <Route path="/" element={<Books />} />
         <Route path="/categories" element={<Categories />} />
       </Routes>
-    </div>
+    </Provider>
   );
 }
 
