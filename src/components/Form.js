@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
@@ -11,8 +10,6 @@ const Form = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  // const [category, setCategory] = useState("");
-  const [genre, setGenre] = useState('');
   const id = v4();
 
   const submitBook = (e) => {
@@ -21,10 +18,9 @@ const Form = () => {
       title,
       author,
       item_id: id,
-      category:"ACTION",
+      category: 'ACTION',
     };
 
-    console.log(newBook)
     if (title && author) {
       toast.success('Book was created successfully!');
       dispatch(postBook(newBook));
@@ -52,7 +48,7 @@ const Form = () => {
         value={author}
         onChange={(e) => setAuthor(e.target.value)}
       />
-      <select name="genre" onChange={(e) => setGenre(e.target.value)}>
+      <select name="genre">
         {genres.map((item) => (
           <option key={item}>{item}</option>
         ))}
