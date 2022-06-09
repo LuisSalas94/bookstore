@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { v4 } from 'uuid';
-import { addBook } from '../redux/books/books';
+import { postBook } from '../redux/books/books';
+
+const genres = ['Action', 'Adventure', 'Drama', 'Fantasy', 'Horror', 'Mystery'];
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -15,12 +17,13 @@ const Form = () => {
     const newBook = {
       title,
       author,
-      id,
-      genre: 'Action',
+      item_id: id,
+      category: 'ACTION',
     };
+
     if (title && author) {
       toast.success('Book was created successfully!');
-      dispatch(addBook(newBook));
+      dispatch(postBook(newBook));
       setTitle('');
       setAuthor('');
     } else {
@@ -45,8 +48,10 @@ const Form = () => {
         value={author}
         onChange={(e) => setAuthor(e.target.value)}
       />
-      <select name="" id="">
-        <option value="category">Category</option>
+      <select name="genre">
+        {genres.map((item) => (
+          <option key={item}>{item}</option>
+        ))}
       </select>
       <input type="submit" />
     </form>
