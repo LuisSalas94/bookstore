@@ -1,6 +1,8 @@
+/* eslint-disable */
 import React from 'react';
 // react router
 import { NavLink } from 'react-router-dom';
+import user from "../image/user.png"
 
 const Header = () => (
   <header className="navbar">
@@ -13,6 +15,7 @@ const Header = () => (
         <NavLink to="/categories">CATEGORIES</NavLink>
       </li>
     </ul>
+    <img src={user} alt="user image" className='user'/>
   </header>
 );
 
