@@ -1,8 +1,8 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { v4 } from 'uuid';
-// import { addBook } from "../redux/books/books";
 import { postBook } from '../redux/books/books';
 
 const genres = ['Action', 'Adventure', 'Drama', 'Fantasy', 'Horror', 'Mystery'];
@@ -11,6 +11,7 @@ const Form = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  // const [category, setCategory] = useState("");
   const [genre, setGenre] = useState('');
   const id = v4();
 
@@ -20,9 +21,10 @@ const Form = () => {
       title,
       author,
       item_id: id,
-      category: genre,
+      category:"ACTION",
     };
 
+    console.log(newBook)
     if (title && author) {
       toast.success('Book was created successfully!');
       dispatch(postBook(newBook));
