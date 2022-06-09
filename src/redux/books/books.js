@@ -33,7 +33,7 @@ const bookReducer = (state = initialState, action) => {
 			return state.filter((book) => book.id !== action.id);
 
 		case LIST_BOOK:
-			return action.paylaod;
+			return action.payload;
 
 		default:
 			return state;
