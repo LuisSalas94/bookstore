@@ -443,6 +443,36 @@ body {
 	animation: load3 0.8s linear forwards 1s;
 }
 
+/* Categories */
+.categories {
+	border: none;
+	cursor: pointer;
+	width: 12.5rem;
+	height: 2.063rem;
+	padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+	margin: 2rem 18%;
+	border-radius: 3px;
+	background-color: var(--azure);
+	color: var(--white);
+	font-size: 0.813rem;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: 0.5px;
+	text-align: center;
+	font-family: "Roboto Slab", serif;
+	text-transform: uppercase;
+}
+
+.categories-span {
+	font-size: 1rem;
+	font-family: "Roboto Slab", serif;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	font-weight: 300;
+}
+
 @keyframes load1 {
 	0% {
 		transform: rotate(0deg);

@@ -54,9 +54,7 @@ const Form = () => {
 					onChange={(e) => setAuthor(e.target.value)}
 				/>
 				<select name="genre" className="book-genre">
-					{genres.map((item) => (
-						<option key={item}>{item}</option>
-					))}
+					<option value="action">Action</option>
 				</select>
 				<input type="submit" value="ADD BOOK" className="input-btn" />
 			</div>
